@@ -1,0 +1,16 @@
+.App{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+    width: 400px;
+    height: 260px;
+}
+
+/* resize images */
+.container img {
+    width: 100%;
+    height: auto;
+}
