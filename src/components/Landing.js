@@ -41,7 +41,7 @@ function Landing() {
     setEmail(res.email)
     setAccessToken(response.accessToken)
     console.log(res)
-    axios.get(`http://localhost:5000/login`, {headers:{accessToken: response.accessToken, email: res.email, name: res.name}})
+    axios.get(`https://ytmetadata.herokuapp.com/login`, {headers:{accessToken: response.accessToken, email: res.email, name: res.name}})
       .then(res => {
         console.log(res.data)
         const persons = (res.data.userInfo);
@@ -135,7 +135,7 @@ function PlaylistItem(props){
         ))});
 
     const handleDeleted=()=>{
-        axios.get(`http://localhost:5000/check`, {headers:{accessToken: props.token, email: props.userInfo.email, playlistId: id}})
+        axios.get(`https://ytmetadata.herokuapp.com/check`, {headers:{accessToken: props.token, email: props.userInfo.email, playlistId: id}})
         .then(res => {
           const persons = res.data
           console.log(persons)
